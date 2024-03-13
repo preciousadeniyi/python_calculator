@@ -1,9 +1,4 @@
 
-
-
-
-
-
 class Calculator:
     def __init__(self, a, b):
        
@@ -24,13 +19,15 @@ class Calculator:
 
     def division(self):
         try:
-            if self.b == 0:
-                return SyntaxError
+            return self.a / self.b
+            
             
         
            
-        except ValueError:
-             return self.a / self.b
+        except SyntaxError:
+            if self.b == 0:
+                return SyntaxError
+             
            
 
 def main():
@@ -62,10 +59,12 @@ def main():
 
         elif choice == '4':
             try :
-                if b == 0:
-                    print(f"{a} / {b} is a Syntax Error")
-            except:
                 print(f"{a} / {b} = {obj.division()}")
+                
+            except:
+                if b == 0:
+                    print(f"{a} / {b} ")
+                
 
         elif choice == '5':
           
